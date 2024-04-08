@@ -44,6 +44,7 @@ export interface WorkerInitialData {
   files: Record<string, EmscriptenFile | EmscriptenFileUrl>;
   archives: Array<PyodideArchive | PyodideArchiveUrl>;
   requirements: string[];
+  prebuiltPackageNames: string[];
   pyodideUrl?: string;
   wheels?: {
     stliteServer: string;
@@ -51,6 +52,8 @@ export interface WorkerInitialData {
   };
   mountedSitePackagesSnapshotFilePath?: string;
   streamlitConfig?: StreamlitConfig;
+  idbfsMountpoints?: string[];
+  nodefsMountpoints?: Record<string, string>;
 }
 
 /**
@@ -152,7 +155,7 @@ export interface OutMessageLoadedEvent extends OutMessageBase {
 export interface OutMessageWebSocketBack extends OutMessageBase {
   type: "websocket:message";
   data: {
-    payload: Uint8Array;
+    payload: Uint8Array | string;
   };
 }
 export type OutMessage =

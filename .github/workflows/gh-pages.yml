@@ -32,13 +32,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: true
 
     ## Set up Python and Poetry environment
     - name: Set up Python ${{ env.python-version }}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ env.python-version }}
 
@@ -58,7 +58,7 @@ jobs:
       run: poetry config virtualenvs.in-project false
 
     - name: Set up cache
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       id: cache
       with:
         path: .venv
@@ -72,7 +72,7 @@ jobs:
       run: python -m venv .venv
 
     ## Set up Node environment
-    - uses: actions/setup-node@v3
+    - uses: actions/setup-node@v4
       with:
         node-version-file: .nvmrc
         cache: 'yarn'
@@ -108,7 +108,7 @@ jobs:
 
     - if: matrix.target == 'mountable'
       name: Upload the built files as an artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: stlite-mountable
         path: packages/mountable/build
@@ -123,7 +123,7 @@ jobs:
       contents: write
 
     steps:
-    - uses: actions/download-artifact@v3
+    - uses: actions/download-artifact@v4
       with:
         name: stlite-mountable
         path: mountable
@@ -151,7 +151,7 @@ jobs:
         cp -r ./mountable/* /tmp/website/${GITHUB_PAGES_SUBDIR_MOUNTABLE}/.
 
     - name: Upload the website files as an artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: ${{ github.ref != 'refs/heads/main' }}
       with:
         name: website

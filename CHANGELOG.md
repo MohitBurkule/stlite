@@ -7,6 +7,227 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.52.1] - 2024-04-04
+
+### `@stlite/desktop`
+
+#### Fixed
+
+- Fix a bug at the `nodefsMountpoints` parser, [#852](https://github.com/whitphx/stlite/pull/852).
+
+## [0.52.0] - 2024-04-04
+
+### `@stlite/kernel`
+
+#### Changed
+
+- `streamlit` requirement is allowed but ignored, [#849](https://github.com/whitphx/stlite/pull/849).
+
+## [0.51.5] - 2024-04-04
+
+### `@stlite/kernel`
+
+#### Fixed
+
+- Internal update, [#842](https://github.com/whitphx/stlite/pull/842).
+
+## [0.51.4] - 2024-04-03
+
+### `@stlite/kernel`
+
+#### Fixed
+
+- Fix a bug at `matplotlib` installation, [#841](https://github.com/whitphx/stlite/pull/841).
+- Some refactoring.
+
+## [0.51.3] - 2024-04-03
+
+### `@stlite/desktop`
+
+#### Fixed
+
+- Fix the installation of prebuilt packages, [#833](https://github.com/whitphx/stlite/pull/833).
+
+## [0.51.2] - 2024-04-03
+
+### `@stlite/desktop`
+
+#### Fixed
+
+- Fix the type validation on the `dump` command, [#817](https://github.com/whitphx/stlite/pull/817).
+- Update README about the file system, [#830](https://github.com/whitphx/stlite/pull/830).
+
+## [0.51.1] - 2024-04-02
+
+### `@stlite/desktop`
+
+#### Fixed
+
+- Fix `nodefsMountpoints` parser, [#817](https://github.com/whitphx/stlite/pull/817).
+
+## [0.51.0] - 2024-03-30
+
+### `@stlite/desktop`
+
+#### Added
+
+- Support `NODEFS` to mount directories on the host OS file system to directories on the virtual file system, [#812](https://github.com/whitphx/stlite/pull/812).
+
+## [0.50.0] - 2024-03-29
+
+### `@stlite/kernel`, `@stlite/mountable`, `@stlite/desktop`
+
+#### Added
+
+- Support IndexedDB-backed file system, `IDBFS`, for data persistence, [#815](https://github.com/whitphx/stlite/pull/815).
+
+## [0.49.4] - 2024-03-29
+
+### `@stlite/desktop`
+
+#### Fixed
+
+- Build config [#813](https://github.com/whitphx/stlite/pull/813).
+
+## [0.49.3] - 2024-03-27
+
+### `@stlite/desktop`
+
+#### Fixed
+
+- Bundle and minify the Electron app files, [#810](https://github.com/whitphx/stlite/pull/810).
+
+## [0.49.2] - 2024-03-24
+
+Internal updates. See the release page for details.
+
+## [0.49.1] - 2024-03-22
+
+### `@stlite/desktop`
+
+#### Fixed
+
+- Catch errors during loading packages, [#798](https://github.com/whitphx/stlite/pull/798).
+
+## [0.49.0] - 2024-03-21
+
+### `@stlite/kernel`
+
+#### Changed
+
+- Update Pyodide to 0.25.0, [#794](https://github.com/whitphx/stlite/pull/794).
+
+### `@stlite/desktop`
+
+#### Fixed
+
+- The dump command adapted to Pyodide 0.25.0, [#794](https://github.com/whitphx/stlite/pull/794).
+
+## [0.48.3] - 2024-03-21
+
+### `@stlite/desktop`
+
+#### Fixed
+
+- Add the E2E test job to the CI workflow, [#795](https://github.com/whitphx/stlite/pull/795).
+
+## [0.48.2]
+
+Skipped.
+
+## [0.48.1]
+
+Skipped.
+
+## [0.48.0] - 2024-03-15
+
+### `@stlite/kernel`
+
+#### Changed
+
+- Update Streamlit to 1.32.2, [#783](https://github.com/whitphx/stlite/pull/783).
+  - This update includes lazy-imports of some dependencies, which reduces the initial loading time.
+
+## [0.47.2] - 2024-03-15
+
+### `@stlite/kernel`
+
+#### Fixed
+
+- Logger settings, [#786](https://github.com/whitphx/stlite/pull/786).
+
+## [0.47.1] - 2024-03-14
+
+### `@stlite/kernel`
+
+#### Fixed
+
+- Cache the worker blob in a cross-origin situation, [#778](https://github.com/whitphx/stlite/pull/778).
+
+## [0.47.0] - 2024-02-11
+
+### `@stlite/kernel`
+
+#### Changed
+
+- Stop publishing `@stlite/kernel` to NPM, [#743](https://github.com/whitphx/stlite/pull/743).
+
+## [0.46.1] - 2024-02-11
+
+### `@stlite/kernel`
+
+#### Fixed
+
+- Restore the `pyodide-http` patch which was removed in 0.45.1, [#742](https://github.com/whitphx/stlite/pull/742) and [#738](https://github.com/whitphx/stlite/pull/738), which was released once as 0.45.3 but not effective.
+
+## [0.46.0] - 2024-02-11
+
+### `@stlite/desktop`
+
+#### Changed
+
+- Update Streamlit to 1.31.0, [#741](https://github.com/whitphx/stlite/pull/741)
+
+## [0.45.5] - 2024-02-11
+
+### `@stlite/desktop`
+
+#### Fixed
+
+- Ship the stlite wheels along with the `desktop` package instead of loading them fron the hosted `kernel` package, [#722](https://github.com/whitphx/stlite/pull/722).
+
+## [0.45.4] - 2024-02-11
+
+### `@stlite/common`
+
+#### Fixed
+
+- `requirements.txt` parser to ignore comments, [#739](https://github.com/whitphx/stlite/pull/739).
+
+## [0.45.3] - 2024-02-11
+
+### `@stlite/kernel`
+
+#### Fixed
+
+- Restore the `pyodide-http` patch which was removed in 0.45.1, [#738](https://github.com/whitphx/stlite/pull/738).
+
+## [0.45.2] - 2024-02-08
+
+### `@stlite/*`
+
+#### Fixed
+
+- Internal package updates.
+
+## [0.45.1] - 2024-02-07
+
+### `@stlite/kernel`
+
+#### Fixed
+
+- Remove the HTTP patch because [`urllib3` started to support Pyodide since 2.2.0](https://urllib3.readthedocs.io/en/stable/reference/contrib/emscripten.html), [#689](https://github.com/whitphx/stlite/pull/689).
+
 ## [0.45.0] - 2024-01-20
 
 ### `@stlite/kernel`
